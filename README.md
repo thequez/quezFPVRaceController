@@ -91,3 +91,13 @@ Out of scope for the first version:
 - Aircraft control
 - Radio-frequency configuration
 - Official race certification
+
+## Check a local record
+
+After installing the verification dependencies, run the following from the repository root. The checker validates the record schema and timing offsets. A rejected record prints a diagnostic and exits with status 1.
+
+```sh
+python scripts/check_record.py examples/record.valid.json
+python scripts/check_record.py examples/record.domain-invalid.json
+python -m unittest discover -s tests
+```

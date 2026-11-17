@@ -19,3 +19,13 @@ The version-one contract is in [record.schema.json](../contracts/record.schema.j
 The verifier checks all three outcomes with `jsonschema` and a format checker. String lengths and collection sizes have basic bounds. The schema describes structure; domain rules, cross-record relationships, authorization, retries, and calculations must be implemented and tested in the application. Tighten semantic constraints with a documented compatibility decision as the first slice is built.
 
 The sample does not imply an HTTP endpoint or event producer exists. Keep a stable schema at an integration boundary; add migrations or versioned contracts when a consumer cannot accept a change.
+
+## Check a local record
+
+After installing the verification dependencies, run the following from the repository root. The checker validates the record schema and timing offsets. A rejected record prints a diagnostic and exits with status 1.
+
+```sh
+python scripts/check_record.py examples/record.valid.json
+python scripts/check_record.py examples/record.domain-invalid.json
+python -m unittest discover -s tests
+```
