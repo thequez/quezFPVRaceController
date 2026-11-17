@@ -1,0 +1,132 @@
+{
+  "name": "qez Development Lab Series",
+  "version": 1,
+  "projects": [
+    {
+      "number": 1,
+      "repo": "thequez/quezFPVRaceController",
+      "title": "Race timing desk",
+      "focus": "Replay a heat from the same gate events the timing desk saw.",
+      "track": "Core"
+    },
+    {
+      "number": 2,
+      "repo": "thequez/quezFPV",
+      "title": "FPV flight logbook",
+      "focus": "Turn a simulator session into a searchable flight record.",
+      "track": "Core"
+    },
+    {
+      "number": 3,
+      "repo": "thequez/360RuckPack",
+      "title": "360 RuckPack load planner",
+      "focus": "Compare packing lists by mass, category and revision.",
+      "track": "Core"
+    },
+    {
+      "number": 4,
+      "repo": "thequez/quez.shop",
+      "title": "Quez shop checkout lab",
+      "focus": "Follow a fictional order from a cart to a reconciled receipt.",
+      "track": "Core"
+    },
+    {
+      "number": 5,
+      "repo": "thequez/TomatoSensory",
+      "title": "Tomato sensory panel",
+      "focus": "Trace a blind tasting score from a paper ballot to a variety summary.",
+      "track": "Core"
+    },
+    {
+      "number": 6,
+      "repo": "thequez/obsidian-secondbrain",
+      "title": "Obsidian vault integrity lab",
+      "focus": "Find broken note links and rebuild a disposable index from Markdown.",
+      "track": "Core"
+    },
+    {
+      "number": 7,
+      "repo": "thequez/EsportsLockIn",
+      "title": "Esports Lock-In scrim desk",
+      "focus": "Resolve roster and map conflicts before a practice night starts.",
+      "track": "Core"
+    },
+    {
+      "number": 8,
+      "repo": "thequez/qez-local",
+      "title": "qez local AI assistant",
+      "focus": "Answer a question from a small local collection and show the supporting passage.",
+      "track": "Core"
+    },
+    {
+      "number": 9,
+      "repo": "thequez/qez-IThomelab",
+      "title": "qez corporate IT homelab",
+      "focus": "Practice employee lifecycle changes across a disposable office environment.",
+      "track": "Core"
+    },
+    {
+      "number": 10,
+      "repo": "thequez/qez-servicedesk",
+      "title": "qez service desk",
+      "focus": "Trace one support ticket through triage, escalation and a verified resolution.",
+      "track": "Core"
+    },
+    {
+      "number": 11,
+      "repo": "thequez/quez-explorer",
+      "title": "Quez radial launcher",
+      "focus": "Select a local action from a configurable radial wheel using a mouse or keyboard.",
+      "track": "Core"
+    },
+    {
+      "number": 12,
+      "repo": "thequez/backendgallery",
+      "title": "Backend Gallery processing pipeline",
+      "focus": "Follow an image from intake through durable thumbnail processing to a ready gallery entry.",
+      "track": "Core"
+    },
+    {
+      "number": 13,
+      "repo": "thequez/ketofast",
+      "title": "KetoFast personal journal",
+      "focus": "Make a private, time-zone-aware record of meal notes and elapsed intervals.",
+      "track": "Core"
+    },
+    {
+      "number": 14,
+      "repo": "thequez/qez-agent-supportops",
+      "title": "Support operations agent",
+      "focus": "Grounded support investigation with human-approved actions",
+      "track": "AWS AI"
+    },
+    {
+      "number": 15,
+      "repo": "thequez/qez-generative-ui",
+      "title": "Generative operations UI",
+      "focus": "Schema-validated operational interfaces built from approved components",
+      "track": "AWS AI"
+    },
+    {
+      "number": 16,
+      "repo": "thequez/qez-agent-evals",
+      "title": "Agent evaluation workbench",
+      "focus": "Repeatable evaluations for tool use, grounding, latency, and cost",
+      "track": "AWS AI"
+    },
+    {
+      "number": 17,
+      "repo": "thequez/qez-agent-finops",
+      "title": "Cloud cost investigation agent",
+      "focus": "Read-only cost investigations with evidence and reviewable recommendations",
+      "track": "AWS AI"
+    },
+    {
+      "number": 18,
+      "repo": "thequez/qez-agent-docflow",
+      "title": "Document intake agent",
+      "focus": "Document extraction, cited evidence, exception routing, and human review",
+      "track": "AWS AI"
+    }
+  ]
+}

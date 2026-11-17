@@ -1,0 +1,110 @@
+{
+  "schema_version": 1,
+  "repository": "thequez/quezFPVRaceController",
+  "title": "Race timing desk",
+  "series": {
+    "name": "qez Development Lab Series",
+    "number": 1,
+    "total": 18,
+    "track": "Core",
+    "track_number": 1,
+    "track_total": 13
+  },
+  "status": "blueprint",
+  "cloud_deployed": false,
+  "problem": "A timing volunteer needs to explain why one pilot gained a lap when two gate detections arrived close together.",
+  "stack": [
+    {
+      "layer": "Timing engine",
+      "technology": "Go",
+      "purpose": "Process an ordered fixture deterministically using integer milliseconds."
+    },
+    {
+      "layer": "Persistence",
+      "technology": "SQLite",
+      "purpose": "Store heat configuration, raw crossings and append-only rulings."
+    },
+    {
+      "layer": "Operator view",
+      "technology": "Go templates and HTML",
+      "purpose": "Expose the lap ledger and provisional standings locally."
+    },
+    {
+      "layer": "Testing",
+      "technology": "Go test",
+      "purpose": "Compare standings against a hand-scored fixture."
+    }
+  ],
+  "aws_extension": [
+    {
+      "service": "Amazon S3",
+      "purpose": "Optionally archive sanitized heat exports for later comparison."
+    },
+    {
+      "service": "AWS Lambda",
+      "purpose": "Optionally recompute a result digest when an export is archived."
+    }
+  ],
+  "practice_objectives": [
+    "Idempotent ingest",
+    "Event-time ordering",
+    "Integer duration arithmetic",
+    "Append-only corrections",
+    "Golden-file testing",
+    "Replayable audit trails"
+  ],
+  "certifications": [
+    {
+      "track": "AWS Certified Developer – Associate",
+      "skills": "Event-triggered processing and retry handling",
+      "evidence": "Demonstrate equal digests after duplicate deliveries in a local handler test."
+    },
+    {
+      "track": "CompTIA Data+",
+      "skills": "Data quality and reconciliation",
+      "evidence": "Publish a hand-scored heat and a discrepancy report."
+    }
+  ],
+  "labs": [
+    {
+      "title": "Score a heat by hand",
+      "task": "Record two pilots and six crossings with an expected lap order.",
+      "acceptance": "Each expected lap links to a crossing ID.",
+      "break_fix": "Shuffle input rows and explain the expected order.",
+      "evidence": "Annotated timing sheet.",
+      "teardown": "Discard the working copy."
+    },
+    {
+      "title": "Replay crossings",
+      "task": "Implement the pure scorer with explicit duplicate rules.",
+      "acceptance": "Two runs produce identical lap rows.",
+      "break_fix": "Duplicate one event and verify its effect is zero.",
+      "evidence": "Golden test output.",
+      "teardown": "Remove the temporary database."
+    },
+    {
+      "title": "Review a correction",
+      "task": "Validate marshal rulings and record their source locally.",
+      "acceptance": "The original event survives an exclusion.",
+      "break_fix": "Reference an unknown event and verify rejection.",
+      "evidence": "Before-and-after ledger excerpt.",
+      "teardown": "Reset the sample heat."
+    },
+    {
+      "title": "Archive a result",
+      "task": "Sketch an optional S3 event adapter and invoke its handler locally.",
+      "acceptance": "Repeated delivery yields the same digest.",
+      "break_fix": "Pass a missing heat ID and report a validation error.",
+      "evidence": "Handler transcript and cost worksheet.",
+      "teardown": "Delete local archives and temp files."
+    },
+    {
+      "title": "Recover the standings",
+      "task": "Rebuild the view from a raw ledger and its rulings.",
+      "acceptance": "Digest matches the approved heat.",
+      "break_fix": "Remove the derived table before reprocessing.",
+      "evidence": "Recovery time and digest pair.",
+      "teardown": "Remove the recovery copy."
+    }
+  ]
+}
