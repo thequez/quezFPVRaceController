@@ -1,0 +1,44 @@
+{
+  "type": "object",
+  "properties": {
+    "event_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 4096,
+      "description": "Unique detection identifier."
+    },
+    "heat_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 4096,
+      "description": "Configured synthetic heat."
+    },
+    "pilot_alias": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 4096,
+      "description": "Entrant alias registered for the heat."
+    },
+    "gate_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 4096,
+      "description": "Timing gate label."
+    },
+    "elapsed_ms": {
+      "type": "integer",
+      "description": "Milliseconds after the heat start."
+    }
+  },
+  "required": [
+    "event_id",
+    "heat_id",
+    "pilot_alias",
+    "gate_id",
+    "elapsed_ms"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Gate crossing",
+  "description": "Version 1 synthetic learning contract; product integration is planned."
+}
